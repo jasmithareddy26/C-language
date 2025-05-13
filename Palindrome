@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<string.h>
+void main(){
+    char s[20];
+    int i,j;
+    scanf("%s",s);
+    j=strlen(s);
+    for(i=0;i<j;i++){
+        if(s[i]!=s[(j-1)-i]){
+            printf("not a palindrome");
+            return;
+        }
+    }
+    printf("palindrome");
+}
