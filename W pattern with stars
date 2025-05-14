@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int row = 7;
+    int col = 4 * row - 3;
+    char arr[row][col];
+
+    // Initialize all elements to space
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            arr[i][j] = ' ';
+        }
+    }
+
+    // Mark positions of 'W' with '*'
+    for (int i = 0; i < row; i++) {
+        arr[i][i] = '*';                                      // leftmost stroke
+        arr[i][2 * row - 2 - i] = '*';                        // second stroke
+        arr[i][2 * row - 2 + i] = '*';                        // third stroke
+        arr[i][col - 1 - i] = '*';                            // rightmost stroke
+    }
+
+    // Print the array
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            printf("%c", arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
